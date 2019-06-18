@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User Authentication: Registration Page</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+  </head>
+  <body>
+<form class="box" action="{% url 'basicUserAuthApp:register' %}" method="post">
+<h1>Registration</h1>
+{% csrf_token %}
+<input type="text" name="first_name" placeholder="First Name">
+<input type="text" name="last_name" placeholder="Last Name">
+<input type="text" name="username" placeholder="Username">
+<input type="text" name="email" placeholder=".@mail.com">
+<input type="password" name="password" placeholder="Password">
+<input type="password" name="rest_password" placeholder="Reset Password">
+<input type="submit" name="" value="Register">
+</form>
+  </body>
+</html>
