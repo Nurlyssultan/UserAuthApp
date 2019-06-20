@@ -5,12 +5,18 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from basicUserAuthApp.models import User
 # Create your views here.
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('index'))
 def index(request):
     return render(request,'basicUserAuthApp/index.html')
 def login_page(request):
     return render(request,'basicUserAuthApp/login.html')
 def registration(request):
     return render(request,'basicUserAuthApp/registration.html')
+def user_page(request):
+    return render(request,'basicUserAuthApp/user.html')
 def log_in(request):
     if request.method == 'POST':
         username = request.POST.get('username')
