@@ -1,2 +1,2 @@
 # ToDoApp
-Simple User-Authentification Application with Django Framework
+Simple User-Authentication Application with Django Framework
